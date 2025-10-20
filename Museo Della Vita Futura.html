@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museo della Vita Futura - Historias de Estudantes</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f7f5f2;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent: #b58b48;
+      --dark: #111111;
+      --maxw: 1100px;
+    }
+    *{box-sizing: border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:var(--bg); color:var(--dark); -webkit-font-smoothing:antialiased}
+    a{color:inherit}header{background:linear-gradient(180deg, rgba(0,0,0,0.03), transparent); backdrop-filter: blur(2px); position:sticky; top:0; z-index:40}
+.container{max-width:var(--maxw); margin:0 auto; padding:20px}
+.nav{display:flex; gap:20px; align-items:center; justify-content:space-between}
+.logo{font-family:'Playfair Display', serif; font-size:20px; letter-spacing:0.4px}
+nav ul{display:flex; gap:12px; list-style:none; margin:0; padding:0}
+nav a{padding:8px 10px; border-radius:8px; text-decoration:none; color:var(--muted)}
+nav a:hover{background:rgba(0,0,0,0.03); color:var(--dark)}
+
+/* Hero */
+.hero{display:grid; grid-template-columns:1fr 420px; gap:24px; align-items:center; padding:40px 0}
+.hero-left h1{font-family:'Playfair Display', serif; font-size:44px; margin:0 0 10px}
+.hero-left p{color:var(--muted); margin:0 0 18px}
+.cta{display:inline-block; background:var(--dark); color:#fff; padding:12px 18px; border-radius:8px; text-decoration:none}
+.stats{display:flex; gap:16px; margin-top:18px}
+.card-hero{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+/* Sections */
+section{padding:40px 0}
+h2{font-family:'Playfair Display', serif; font-size:28px; margin:0 0 18px}
+p.lead{color:var(--muted); margin:0 0 12px}
+
+/* Exposições */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+.expo{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.expo img{width:100%; height:160px; object-fit:cover; display:block}
+.expo .body{padding:14px}
+.tag{font-size:12px; color:var(--muted)}
+
+/* Events */
+.events{display:flex; flex-direction:column; gap:12px}
+.event{display:flex; gap:12px; align-items:center; background:var(--card); padding:12px; border-radius:10px}
+.event .date{min-width:84px; text-align:center; padding:8px; border-radius:8px; background:linear-gradient(180deg, #fff, #faf7f3); font-weight:600}
+
+/* Visit */
+.visit-grid{display:grid; grid-template-columns:1fr 320px; gap:18px}
+.map-placeholder{height:320px; background:linear-gradient(180deg, #e9e6e2, #fff); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--muted);}
+
+/* Contact */
+.form{display:grid; gap:10px}
+input, textarea, button{font:inherit; padding:10px; border-radius:8px; border:1px solid #000000}
+button{background:var(--accent); color:#000000; border:none; cursor:pointer}
+
+footer{padding:24px 0; color:var(--muted)}
+
+/* Modal */
+.modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:60}
+.modal.show{display:flex}
+.modal .panel{max-width:900px; width:92%; background:#fff; border-radius:12px; overflow:hidden}
+.modal .panel .content{display:grid; grid-template-columns:1fr 300px}
+.modal img{width:100%; height:100%; object-fit:cover}
+.close{position:absolute; right:12px; top:12px; background:#fff; border-radius:8px; padding:6px; cursor:pointer}
+
+/* Responsive */
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;}
+  .visit-grid{grid-template-columns:1fr}
+  .modal .content{grid-template-columns:1fr}
+  nav ul{display:none}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Museo della Vita Futura</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#exposicoes">Exposições</a></li>
+         
+        </ul>
+      </nav>
+    </div>
+  </header> <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Do Presente para o Futuro</h1>
+        <p class="lead">Histórias de estudante da escola pública, utilizando IA.</p>
+        <a class="cta" href="#exposicoes">Explorar Exposições</a>
+        <div class="stats">
+          <div class="card-hero"><strong>4</strong><div class="tag">Obras em destaque</div></div>
+          <div class="card-hero"><strong>4</strong><div class="tag">Exposições</div></div>
+          <div class="card-hero"><strong>1</strong><div class="tag">Visitantes/ano</div></div>
+        </div>
+      </div>
+      <div class="card-hero">
+        <img src="https://bahiaeconomica.com.br/wp/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-13-at-14.43.59.jpeg" alt="Museu" style="width:100%; height:360px; object-fit:cover; border-radius:8px; display:block;">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px; font-family:'Playfair Display'">Colégio Estadual Renan Baleeiro</h3>
+          <p style="margin:0; color:var(--muted)">Colégio periférico localizado em Águas Claras, um bairro quilombola.</p>
+        </div>
+      </div>
+    </section><section id="about">
+  <h2>Sobre o Museu</h2>
+  <p class="lead">Projeto iniciado em 2025, o Museo Della Vita Futura reúne história de alunos no seu dia a dia escolar com foco em pesquisa e projetos com IA.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px">
+    <div class="card-hero">
+      <h3 style="margin-top:0">Missão</h3>
+      <p style="color:var(--muted); margin:0">Mostrar a criação e o aprendizado com IA, com o auxilio da Prof. Ezileide e Prof. Chiara.</p>
+    </div>
+    <div class="card-hero">
+      <h3 style="margin-top:0">Linha do Tempo</h3>
+      <ul style="margin:0; padding-left:18px; color:var(--muted)">
+        <li> 08/09/25 — Início do projeto</li>
+        <li>16/10/25 — Finalização</li>
+        <li>27/10/25 — Apresentação</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="exposicoes">
+  <h2>Exposições</h2>
+  <p class="lead">Acompanhe o estudantes no projeto.</p>
+  <div class="gallery" aria-live="polite">
+
+    
+    <article class="expo" data-title="CERB" data-desc="Colégio onde o projeto foi iniciado e apresentado" data-img="https://bahiaeconomica.com.br/wp/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-13-at-14.43.59.jpeg">
+      <img src="https://bahiaeconomica.com.br/wp/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-13-at-14.43.59.jpeg" alt="Memórias Pintadas">
+      <div class="body">
+        <div class="tag"> CERB — 01/09/2025 até 30/11/2025</div>
+        <h3 style="margin:8px 0 6px">Colégio Estadual Renan Baleeiro</h3>
+        <p style="margin:0 0 10px; color:var(--muted)">Colégio periférico localizado em Águas Claras, um bairro quilombola.</p>
+        <button onclick="openModal(this.closest('.expo'))">Ver detalhes</button>
+      </div>
+    </article>
+
+    <article class="expo" data-title="Ricordi" data-desc="Os alunos Adeildo e Icaro desenvolveram a parte logica do site utilizando da IA, o foco do projeto, fazendo algumas alterações ao longo do trabalho para entregar o melhor possível no prezo estimado." data-img="IMG-20251014-WA0099.jpg">
+      <img src="WhatsApp Image 2025-10-13 at 21.40.24.jpeg" alt="Memórias Pintadas">
+      <div class="body">
+        <div class="tag"> CERB — 01/09/2025 até 30/11/2025</div>
+        <h3 style="margin:8px 0 6px">Adeildo e Icaro</h3>
+        <p style="margin:0 0 10px; color:var(--muted)">Dsenvolvedores do site.</p>
+        <button onclick="openModal(this.closest('.expo'))">Ver detalhes</button>
+      </div>
+    </article>
+    
+    
+
+    <article class="expo" data-title="Cauan e Gabriel." data-desc="Os alunos Cauan e Gabriel, desenvolveram o design do site, utilizando da IA com base." data-img="IMG-20251014-WA0089.jpg">
+      <img src="IMG-20251014-WA0075.jpg" alt="Memórias Pintadas">
+      <div class="body">
+        <div class="tag"> CERB — 01/09/2025 até 30/11/2025</div>
+        <h3 style="margin:8px 0 6px">Cauan e Gabriel</h3>
+        <p style="margin:0 0 10px; color:var(--muted)">Designer do site.</p>
+        <button onclick="openModal(this.closest('.expo'))">Ver detalhes</button>
+      </div>
+    </article>
+
+    <article class="expo" data-title="Elion, Otavio e Joao" data-desc="Os alunos Elion, Otavio e João ficaram responsaveis pela textografia do site escolhendo fontes, nomes e textos." data-img="IMG-20251016-WA0103.jpg">
+      <img src="IMG-20251016-WA0110.jpg" alt="Elion, Otavio e Joao">
+      <div class="body">
+        <div class="tag">CERB — 01/09/2025 até 30/11/2025</div>
+        <h3 style="margin:8px 0 6px">Elion, Otavio e Joao</h3>
+        <p style="margin:0 0 10px; color:var(--muted)">Textografia.</p>
+        <button onclick="openModal(this.closest('.expo'))">Ver detalhes</button>
+      </div>
+    </article>
+   
+
+     
+</section>
+
+  </main> <footer>
+    <div class="container">
+      <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+        <div>
+          <strong>Museo della Vita Futura</strong>
+          <div style="color:var(--muted)">© 2025 — Todos os direitos reservados</div>
+        </div>
+        <div style="color:var(--muted)">Política de privacidade • Acessibilidade</div>
+      </div>
+    </div>
+  </footer> <!-- Modal para detalhes de exposição --> <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="panel">
+      <button class="close" onclick="closeModal()" aria-label="Fechar">✕</button>
+      <div class="content">
+        <div id="modalImgWrap">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <div style="padding:18px">
+          <h3 id="modalTitle"></h3>
+          <p id="modalDesc" style="color:var(--muted)"></p>
+          <p style="margin-top:12px"><strong>Datas:</strong> <span id="modalDates">—</span></p>
+          <div style="margin-top:18px"><button onclick="alert('Adicionar aos favoritos (simulado)')">Favoritar exposição</button></div>
+        </div>
+      </div>
+    </div>
+  </div> <script>
+    function openModal(node){
+      const title = node.getAttribute('data-title') || 'Exposição';
+      const desc = node.getAttribute('data-desc') || '';
+      const img = node.getAttribute('data-img') || '';
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalImg').src = img;
+      document.getElementById('modal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      document.getElementById('modal').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+    function submitContact(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('mensagem').value;
+      // Simulação: exibir confirmação
+      alert('Mensagem enviada!\nNome: '+nome+'\nE‑mail: '+email+'\nMensagem: '+(msg.length>80? msg.slice(0,77)+'...':msg));
+      e.target.reset();
+    }
+
+    // Pequeno ajuste para links âncora suave
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(ev){
+        ev.preventDefault();
+        const id = this.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script></body>
+</html>
